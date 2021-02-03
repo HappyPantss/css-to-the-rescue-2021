@@ -11,178 +11,54 @@ a {
     text-decoration: none;
 }
 
-.heading {
-    display: flex;
-    width: 100vw;
-    height: 12vh;
-    background-color: #0d579b;
-    position: absolute;
-    top: 0;
-    padding: 1vh;
-    border-bottom: white solid 3px;
+.item-a {
+    grid-area: header;
 }
 
-.heading-item {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.item-b {
+    grid-area: main;
 }
 
-.heading-monocle {
-    flex: 1;
-}
-
-.rainbow-text {
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-#team-name {
-    font-size: 40px;
-    font-weight: bolder;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-stroke: 3px white;
-    position: relative;
-    left: 50px;
-}
-
-#monocle-man {
-    width: 10vh;
-    height: auto;
-}
-
-.menu-link {
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-left: 75px;
-    font-size: 35px;
-    -webkit-text-stroke: 1.5px white;
+.item-c {
+    grid-area: footer;
 }
 
 .container {
-    width: 98%;
-    height: 800px;
-    margin: 10rem auto;
-    position: relative;
-    text-align: justify;
+    display: grid;
+    grid-template-columns: 15rem 30rem 30rem;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header header" ". main main ." "footer footer footer footer";
+}
+
+img {
+    grid-column: 3;
+    height: 100px;
+    width: 100px;
+}
+
+.info {
+    background-color: white;
+    padding: 2rem;
+    color: black;
 }
 
 .circle {
-    animation: circleTr 3s infinite;
     float: left;
     height: 200px;
     width: 200px;
     shape-outside: circle();
+}
+
+.circle:hover {
     background: linear-gradient(to top right, #FDB171, #FD987D);
+    opacity: .4;
 }
 
-@keyframes circleTr {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: .3;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.container .circle2 {
+.circle2 {
     float: left;
     height: 200px;
     width: 200px;
-    shape-outside: circle(25%);
-    shape-margin: 1rem;
-    clip-path: circle(25%);
-    background: linear-gradient(to top right, #FDB171, #FD987D);
-}
-
-.container img {
-    float: left;
-    height: 100px;
-    shape-margin: 0.2rem;
-    width: 100px;
-    shape-outside: url('../img/star.png');
-    transition: 0.3s;
-}
-
-.container img:nth-child(6) {
-    float: right;
-}
-
-.container .star:hover {
-    height: 150px;
-    width: 150px;
-}
-
-.container .centerimage {
-    clip-path: circle(50%);
-    width: 580px;
-    height: 580px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.85);
-}
-
-.container .centerimage img {
-    width: 580px;
-    height: 580px;
-    object-fit: cover;
-}
-
-.container .left {
-    width: 48%;
-    float: left;
-}
-
-.container .left:before,
-.container .right:before {
-    content: "";
-    width: 250px;
-    height: 707px;
-}
-
-.container .left:before {
-    float: right;
-    shape-outside: polygon(1.57% 59.5%, 7.91% 43.88%, 24.42% 34.33%, 53.81% 25.42%, 99.38% 21.05%, 100.07% 93.04%, 55.84% 88.35%, 17.85% 77.33%);
-}
-
-.container .right {
-    width: 48%;
-    float: right;
-}
-
-.container .right::before {
-    float: left;
-    shape-outside: polygon(98.87% 55.77%, 89.89% 40.49%, 73.91% 33.73%, 42.53% 24.57%, -0.55% 21.08%, 0.21% 92.18%, 50.78% 87.79%, 87.79% 74.37%);
-}
-
-
-/* .circleTr {
-    animation: circleTr 3s infinite;
-    float: left;
-    height: 10%;
-    width: 10%;
-    background: linear-gradient(to top right, #FDB171, #FD987D);
-    opacity: 0;
     shape-outside: circle();
+    clip-path: circle();
+    background: linear-gradient(to top right, #FDB171, #FD987D);
 }
-
-@keyframes circleTr {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: .3;
-    }
-    100% {
-        opacity: 0;
-    }
-} */
