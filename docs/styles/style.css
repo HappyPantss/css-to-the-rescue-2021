@@ -141,3 +141,8 @@ img {
     shape-outside: circle(50%);
     clip-path: circle(50%);
 }
+
+.star {
+    float: left;
+    shape-outside: url('./img/r2.png')
+}
