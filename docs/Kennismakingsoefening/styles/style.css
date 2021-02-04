@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Yusei+Magic&display=swap');
+body {
+    background: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading {
+    display: flex;
+    width: 99%;
+    height: 12vh;
+    background-color: #0d579b;
+    position: absolute;
+    top: 0;
+    padding: 1vh;
+    border-bottom: white solid 3px;
+}
+
+.heading-item {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-monocle {
+    flex: 1;
+}
+
+.rainbow-text {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#team-name {
+    font-size: 40px;
+    font-weight: bolder;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+    position: relative;
+    left: 50px;
+}
+
+#monocle-man {
+    width: 10vh;
+    height: auto;
+}
+
+.menu-link {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-left: 75px;
+    font-size: 35px;
+    -webkit-text-stroke: 1.5px white;
+}
+
+.item-a {
+    grid-area: header;
+}
+
+.item-b {
+    grid-area: main;
+}
+
+.item-c {
+    grid-area: footer;
+}
+
+.container {
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 15rem 30rem 30rem;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header header" ". main main ." "footer footer footer footer";
+}
+
+img {
+    grid-column: 3;
+    height: 100px;
+    width: 100px;
+}
+
+.info {
+    background-color: white;
+    padding: 2rem;
+    color: black;
+}
+
+.circle {
+    float: left;
+    height: 200px;
+    width: 200px;
+    shape-outside: circle();
+}
+
+.circle:hover {
+    background: linear-gradient(to top right, #FDB171, #FD987D);
+    opacity: .4;
+}
+
+.circle2 {
+    float: left;
+    height: 200px;
+    width: 200px;
+    shape-outside: circle();
+    clip-path: circle();
+    background: linear-gradient(to top right, #FDB171, #FD987D);
+}
+
+.circle3 {
+    float: left;
+    height: 200px;
+    width: 200px;
+    shape-outside: circle(50% at 0 50%);
+    clip-path: circle(50% at 0 50%);
+    background: linear-gradient(to top right, #FDB171, #FD987D);
+}
+
+.circle4 {
+    float: left;
+    height: 200px;
+    width: 200px;
+    shape-outside: circle(25%);
+    shape-margin: 1rem;
+    clip-path: circle(25%);
+    background: linear-gradient(to top right, #FDB171, #FD987D);
+    transition: shape-outside 1s, clip-path 1s;
+}
+
+.circle4:hover {
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+}
+
+.star {
+    float: left;
+    shape-outside: url('./img/r2.png')
+}
