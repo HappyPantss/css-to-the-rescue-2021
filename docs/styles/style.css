@@ -116,3 +116,28 @@ img {
     clip-path: circle();
     background: linear-gradient(to top right, #FDB171, #FD987D);
 }
+
+.circle3 {
+    float: left;
+    height: 200px;
+    width: 200px;
+    shape-outside: circle(50% at 0 50%);
+    clip-path: circle(50% at 0 50%);
+    background: linear-gradient(to top right, #FDB171, #FD987D);
+}
+
+.circle4 {
+    float: left;
+    height: 200px;
+    width: 200px;
+    shape-outside: circle(25%);
+    shape-margin: 1rem;
+    clip-path: circle(25%);
+    background: linear-gradient(to top right, #FDB171, #FD987D);
+    transition: shape-outside 1s, clip-path 1s;
+}
+
+.circle4:hover {
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+}
