@@ -3,7 +3,6 @@ Welkom op mijn CSS to the Rescue @cmda-minor-web 2020 - 2021 repository. Hier vi
 
 <!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 [Link volgt nog...](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-Ja
 
 <!-- Maybe a table of contents here? 📚 -->
 
@@ -19,6 +18,16 @@ Ja
 Het **eerste uitgangspunt** is dat je *geen* ID's en classes gebruikt. Niet omdat ze niet nuttig zijn, maar om te oefenen met de [vele CSS selectoren](https://css-tricks.com/almanac/) die je tot je beschikking hebt. ID's mag je alleen gebruiken om de :target selector te triggeren. En als het echt echt echt niet anders kan, heb je permissie om een paar classes toe te voegen.
 
 Een **tweede uitgangspunt** is dat je *geen* JS gebruikt (i.i.g. zo min mogelijk - het vak heet niet voor niets CSS to the Rescue). Wat met CSS en/of HTML kan mag je *niet* met JS realiseren en het is *niet* toegestaan om CSS properties met JS aan te passen. We vinden het daarentegen wel interessant dat je verkent waar JS en CSS elkaar raken/versterken, bijv. het [uitlezen en aanpassen van CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties), of bijv. de [animationstart](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationstart_event), [animationcancel](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationcancel_event), [animationiteration](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationiteration_event) en [animationend](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event) events gebruiken.
+
+## Keuzes, context en restricties
+Keuze: CSS Zen Garden - 2021 versie - Menu voor restaurant
+Context: -prefers-color-scheme
+Restricties: 
+- SVG toepassen in shapes, masks en filters
+- Twee kleuren
+- Responsive zonder media queries
+
+## Schetsen
 
 <!-- How about a section that describes how to install this project? 🤓 -->
 
