@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100&family=Potta+One&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100&family=Potta+One&family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu&display=swap');
 :root {
     --primary: #5CDB95;
     --secondary: #05386B;
     --headings: 'Potta One', cursive;
     --paragraphs: 'Londrina Solid', cursive;
     --extra: 'Roboto', sans-serif;
+    --text: 'Ubuntu', sans-serif;
 }
 
 * {
@@ -24,28 +25,44 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: var(--headings);
+    font-family: var(--extra);
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 h1 {
     font-size: 5rem;
     height: calc(5rem * 1.6);
-    animation-name: jump-jump-animation;
-    animation-duration: .4s;
+    animation-name: glitch-text;
+    animation-duration: .8s;
     animation-iteration-count: infinite;
     text-shadow: .05em -.05em 0 rgba(255, 255, 255, 1);
 }
 
-@keyframes jump-jump-animation {
+@keyframes glitch-text {
     0%,
     100% {
+        font-style: normal;
         font-family: var(--headings);
     }
-    50% {
+    25% {
+        text-decoration: line-through;
+        text-transform: capitalize;
         font-family: var(--paragraphs);
+    }
+    50% {
+        font-style: italic;
+        text-decoration: underline;
+        text-transform: lowercase;
+        font-family: var(--paragraphs);
+    }
+    65% {
+        text-transform: uppercase;
+        font-family: var(--extra);
     }
     75% {
         font-family: var(--extra);
+        text-decoration: underline;
     }
 }
 
@@ -58,9 +75,36 @@ h2 {
 }
 
 h2:hover {
-    animation-name: jump-jump-animation;
+    animation-name: glitch-text;
     animation-duration: .4s;
     animation-iteration-count: infinite;
+}
+
+.blob {
+    width: 270px;
+    height: 150px;
+    border-radius: 60% 40% 20% 80% / 65% 25% 75% 35%;
+    /* lekker traag zoals een blob traag is*/
+    background-image: linear-gradient(darkTurquoise, hotpink);
+    position: absolute;
+    animation: blob 20s infinite linear;
+    z-index: -1;
+}
+
+@keyframes blob {
+    0%,
+    100% {
+        border-radius: 60% 40% 20% 80% / 65% 25% 75% 35%;
+    }
+    25% {
+        border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
+    }
+    50% {
+        border-radius: 20% 80% 55% 45% / 60% 20% 40% 40%;
+    }
+    75% {
+        border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -93,7 +137,7 @@ h2:hover {
         color: var(--secondary);
     }
     h2 {
-        color: white;
+        color: #fff;
         text-shadow: .05em -.05em 0 rgba(5, 56, 107, 1);
     }
     h2:hover {
@@ -104,12 +148,14 @@ h2:hover {
 body>header {
     padding: 40px;
     text-align: center;
-    color: white;
+    color: #fff;
 }
 
 p {
-    color: white;
-    font-family: var(--paragraphs);
+    color: #fff;
+    font-family: var(--extra);
+    font-weight: 100;
+    text-transform: capitalize;
 }
 
 body>header>p {
@@ -117,15 +163,27 @@ body>header>p {
     margin-top: -1.3rem;
 }
 
-div {
+div:not(:first-child) {
     font-family: var(--extra);
+    color: var(--secondary);
+    font-size: 1.2rem;
+    width: 20%;
+    font-weight: 700;
+    background-color: var(--primary);
+    margin: .1rem 0 1rem 0;
+}
+
+div:not(:first-child)::before {
+    content: '€';
+}
+
+div:not(:first-child)::after {
+    content: ',00';
 }
 
 main {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax( min(100%, 500px), /* min value */
-    1fr/* max value */
-    ));
+    grid-template-columns: repeat( auto-fit, minmax( min(100%, 630px), 1fr));
     gap: 20px;
 }
 

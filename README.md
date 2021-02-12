@@ -2,7 +2,7 @@
 Welkom op mijn CSS to the Rescue @cmda-minor-web 2020 - 2021 repository. Hier vind je mijn uitleg over de opdracht, voortgang, code en live link.
 
 <!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
-[Link volgt nog...](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[Link naar live versie](https://happypantss.github.io/css-to-the-rescue-2021/)
 
 <!-- Maybe a table of contents here? 📚 -->
 
