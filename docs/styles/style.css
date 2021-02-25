@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100&family=Potta+One&family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu&display=swap');
 :root {
-    --primary: #5CDB95;
-    --secondary: #05386B;
     --headings: 'Potta One', cursive;
     --paragraphs: 'Londrina Solid', cursive;
     --extra: 'Roboto', sans-serif;
@@ -19,6 +17,7 @@ body {
     box-sizing: border-box;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    background: var(--scheme-color);
 }
 
 main {
@@ -31,6 +30,8 @@ main {
 
 main>section {
     padding: 1.35rem;
+    /* background-image: linear-gradient( 45deg, rgba(5, 56, 107, 0.3), rgba(92, 219, 149, 0.2), rgba(5, 56, 107, 0.3), rgba(92, 219, 149, 0.2), rgba(5, 56, 107, 0.3)); */
+    border: 4px solid var(--primary);
 }
 
 h1,
@@ -40,6 +41,7 @@ h4 {
     font-family: var(--extra);
     text-transform: uppercase;
     font-weight: 700;
+    color: var(--primary);
 }
 
 h1 {
@@ -48,7 +50,7 @@ h1 {
     height: calc(5rem * 1.6);
     animation-duration: .8s;
     animation-iteration-count: infinite;
-    text-shadow: .05em -.05em 0 rgba(255, 255, 255, 1);
+    text-shadow: .05em -.05em 0 #ffffff;
 }
 
 h2 {
@@ -57,12 +59,15 @@ h2 {
     line-height: .9em;
     letter-spacing: .1em;
     transition: .3s;
+    color: var(--primary);
+    text-shadow: .05em -.05em 0 var(--text-color);
 }
 
 h2:hover {
     animation-name: glitch-text;
     animation-duration: .4s;
     animation-iteration-count: infinite;
+    text-shadow: .05em -.05em 0 var(--scheme-color);
 }
 
 h3 {
@@ -89,13 +94,17 @@ body>header {
     padding: 40px;
     text-align: center;
     background-repeat: no-repeat;
-    background: linear-gradient(45deg, var(--secondary), transparent), repeating-linear-gradient(90deg, var(--secondary) 0%, var(--secondary) 5%, transparent 5%, transparent 10%), var(--secondary) repeating-linear-gradient(-45deg, var(--secondary) 0%, var(--primary) 5%, transparent 5%, transparent 10%);
-    background-blend-mode: multiply;
+    background: linear-gradient(45deg, var(--primary), transparent), repeating-linear-gradient(90deg, var(--primary) 0%, var(--primary) 5%, transparent 5%, transparent 10%), var(--primary) repeating-linear-gradient(-45deg, var(--primary) 0%, var(--primary) 5%, transparent 5%, transparent 10%);
+    background-blend-mode: difference;
     margin-bottom: 3rem;
 }
 
+body>header>p {
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin-top: -1.3rem;
+}
+
 article {
-    /* background-color: cornflowerblue; */
     display: grid;
     grid-template-columns: 1fr 6rem;
     margin: 1.6rem 0 0 0;
@@ -106,20 +115,15 @@ article>h3 {
 }
 
 p {
-    color: var(--secondary);
+    color: var(--text-color);
     font-family: var(--extra);
     font-weight: 400;
     text-transform: capitalize;
 }
 
-body>header>p {
-    font-size: clamp(1rem, 5vw, 2rem);
-    margin-top: -1.3rem;
-}
-
 div:not(:first-child) {
     font-family: var(--extra);
-    color: var(--secondary);
+    color: var(--primary);
     font-size: 1.2rem;
     font-weight: 700;
     text-align: right;
@@ -133,16 +137,17 @@ div:not(:first-child)::after {
     content: ',00';
 }
 
-.blob {
+
+/* .blob {
     width: 310px;
     height: 100px;
     border-radius: 20% 40% 20% 30% / 65% 25% 75% 35%;
-    background-image: linear-gradient(var(--secondary), var(--primary));
+    background-image: linear-gradient(var(--priar), var(--primary));
     position: absolute;
     margin: -1rem 0 0 -1.5rem;
     animation: blob 20s infinite linear;
     z-index: -1;
-}
+} */
 
 .mes {
     position: relative;
@@ -163,8 +168,8 @@ div:not(:first-child)::after {
     width: 1.4em;
     height: 5em;
     border-radius: 30% 0% 100% 50% / 100% 100% 30% 50%;
-    background-color: var(--secondary);
-    filter: grayscale(1);
+    background-color: var(--primary);
+    /* filter: grayscale(1); */
     margin-left: .6rem;
 }
 
@@ -175,9 +180,10 @@ div:not(:first-child)::after {
 
 .vork section:first-of-type {
     position: relative;
-    width: 4em;
+    width: 3em;
     height: 4em;
-    border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+    margin-left: .5rem;
+    border-radius: 100% 100% 70% 70% / 100% 70% 100% 70%;
     background-color: var(--primary);
     filter: invert(50%);
 }
@@ -185,10 +191,10 @@ div:not(:first-child)::after {
 .vork section:last-of-type {
     position: relative;
     width: 1.4em;
-    height: 5em;
+    height: 8em;
     border-radius: 30% 0% 100% 50% / 100% 100% 30% 50%;
-    background-color: var(--secondary);
-    filter: grayscale(1);
+    background-color: var(--primary);
+    /* filter: grayscale(1); */
     margin-left: 1.2rem;
 }
 
@@ -196,9 +202,9 @@ div:not(:first-child)::after {
 .vork section:nth-of-type(3) {
     position: absolute;
     width: .6em;
-    height: 3em;
+    height: 2em;
     border-radius: 30% 0% 100% 50% / 100% 100% 30% 50%;
-    background-color: black;
+    background-color: var(--scheme-color);
     top: 0;
 }
 
@@ -227,68 +233,17 @@ div:not(:first-child)::after {
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background-repeat: no-repeat;
-        background: linear-gradient( black 15%, var(--secondary));
-    }
-    main>section {
-        background-image: linear-gradient( 45deg, rgba(92, 219, 149, 0.3), rgba(92, 219, 149, 0.2), rgba(92, 219, 149, 0.3), rgba(92, 219, 149, 0.2), rgba(92, 219, 149, 0.3));
-        border: 4px solid var(--primary);
-        background-size: 200% 200%;
-        animation-name: rainbow-animation;
-        background-position: left bottom;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-play-state: paused;
-    }
-    main>section:hover {
-        animation-play-state: running;
-    }
-    @keyframes rainbow-animation {
-        0% {
-            background-position: left bottom;
-        }
-        100% {
-            background-position: right top;
-        }
-    }
-    h1,
-    h2,
-    h3,
-    h4 {
-        color: var(--primary);
-    }
-    h2 {
-        color: var(--primary);
-        text-shadow: .05em -.05em 0 rgba(255, 255, 255, 1);
-    }
-    h2:hover {
-        text-shadow: .05em -.05em 0 rgba(255, 255, 255, 1);
-    }
-    p {
-        color: white;
-    }
-    div:not(:first-child) {
-        color: white;
+     :root {
+        --primary: #5C4AD8;
+        --scheme-color: #0D1117;
+        --text-color: #FFFFFF;
     }
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-        background: var(--primary);
-    }
-    h1,
-    h2,
-    h3,
-    h4 {
-        color: var(--secondary);
-    }
-    h2 {
-        color: #fff;
-        text-shadow: .05em -.05em 0 rgba(5, 56, 107, 1);
-    }
-    h2:hover {
-        text-shadow: .05em -.05em 0 rgba(5, 56, 107, 1);
+     :root {
+        --primary: #0084FF;
+        --scheme-color: #FFFFFF;
+        --text-color: #0D1117;
     }
 }
