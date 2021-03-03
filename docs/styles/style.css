@@ -17,7 +17,7 @@ body {
     box-sizing: border-box;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--scheme-color);
+    background: rgb(var(--scheme-color));
     overflow-x: hidden;
 }
 
@@ -32,29 +32,11 @@ main {
 main>section {
     padding: 1.35rem;
     border: 4px solid rgb(var(--primary));
-    background-color: rgba(0, 0, 0, 0.4);
-    /* background-image: linear-gradient( 45deg, rgba(var(--primary), 0.3), transparent, rgb(var(--primary), 0.3), transparent, rgb(var(--primary), 0.3));
-    background-size: 200% 200%;
-    background-position: left bottom;
-    animation-name: rainbow-animation;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-play-state: paused; */
+    background-color: rgba(var(--scheme-color), 0.4);
 }
 
 main>section:hover {
-    background-color: rgba(0, 0, 0, 1);
-    /* animation-play-state: running; */
-}
-
-@keyframes rainbow-animation {
-    0% {
-        background-position: left bottom;
-    }
-    100% {
-        background-position: right top;
-    }
+    background-color: rgba(var(--scheme-color), 1);
 }
 
 h1,
@@ -83,7 +65,7 @@ h2 {
     letter-spacing: .1em;
     transition: .3s;
     color: rgb(var(--primary));
-    text-shadow: .05em -.05em 0 var(--text-color);
+    text-shadow: .05em -.05em 0 rgb(var(--text-color));
 }
 
 h2:hover {
@@ -137,7 +119,7 @@ article>h3 {
 }
 
 p {
-    color: var(--text-color);
+    color: rgb(var(--text-color));
     font-family: var(--extra);
     font-weight: 400;
     text-transform: capitalize;
@@ -158,18 +140,6 @@ article>div:not(:first-child)::before {
 article>div:not(:first-child)::after {
     content: ',00';
 }
-
-
-/* .blob {
-    width: 310px;
-    height: 100px;
-    border-radius: 20% 40% 20% 30% / 65% 25% 75% 35%;
-    background-image: linear-gradient(var(--priar), rgb(var(--primary)));
-    position: absolute;
-    margin: -1rem 0 0 -1.5rem;
-    animation: blob 20s infinite linear;
-    z-index: -1;
-} */
 
 .bestek {
     position: absolute;
@@ -198,7 +168,6 @@ article>div:not(:first-child)::after {
     height: 5em;
     border-radius: 30% 0% 100% 50% / 100% 100% 30% 50%;
     background-color: rgb(var(--primary));
-    /* filter: grayscale(1); */
     margin-left: .6rem;
 }
 
@@ -234,7 +203,7 @@ article>div:not(:first-child)::after {
     height: 3em;
     border-radius: 30% 30% 50% 50% / 30% 30% 50% 50%;
     bottom: .5em;
-    background: var(--scheme-color);
+    background: rgb(var(--scheme-color));
     z-index: 1;
     margin-left: .7rem;
 }
@@ -247,7 +216,7 @@ article>div:not(:first-child)::after {
     height: 3em;
     border-radius: 30% 30% 50% 50% / 30% 30% 50% 50%;
     bottom: -.5em;
-    background: var(--scheme-color);
+    background: rgb(var(--scheme-color));
     z-index: 1;
     margin-left: 1.8rem;
 }
@@ -263,15 +232,15 @@ article>div:not(:first-child)::after {
 @media (prefers-color-scheme: dark) {
      :root {
         --primary: 92, 74, 216;
-        --scheme-color: #000000;
-        --text-color: #FFFFFF;
+        --scheme-color: 0, 0, 0;
+        --text-color: 255, 255, 255;
     }
 }
 
 @media (prefers-color-scheme: light) {
      :root {
         --primary: 0, 132, 255;
-        --scheme-color: #FFFFFF;
-        --text-color: #000000;
+        --scheme-color: 255, 255, 255;
+        --text-color: 0, 0, 0;
     }
 }
